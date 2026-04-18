@@ -1,1 +1,59 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itayra | Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="enter-overlay">
+        <p>[ Click anywhere to enter ]</p>
+    </div>
+
+    <div class="video-container">
+        <video autoplay loop muted playsinline id="bg-video">
+            <source src="background-loop.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container">
+        <div class="glass-card">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img src="my-pfp.gif" alt="Profile Avatar" class="avatar">
+                    <img src="my-decoration.gif" alt="Decoration" class="avatar-decoration">
+                </div>
+                <h1 class="username">Itayra</h1>
+                <p class="role">Full-Stack Developer | Bot Developer | Scripter</p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://discord.com/users/454589765468291072" target="_blank" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://github.com/0Itayra0" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+            <div class="audio-player">
+                <img src="song-cover.webp" alt="Cover" class="song-cover">
+                <div class="song-info">
+                    <span class="song-title">Lullaby of the New Moon</span>
+                    <div class="progress-container">
+                        <span class="time current-time">0:00</span>
+                        <div class="progress-bar" id="progress-container">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <span class="time total-time">2:14</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="play-btn"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <audio id="bg-audio" src="lullaby_of_the_new_moon.mp3" loop></audio>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

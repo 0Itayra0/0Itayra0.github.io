@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+/* Fullscreen Background Video */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #000; /* Fallback */
+}
+
+#bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video covers the screen without stretching */
+    opacity: 0.8; /* Slightly dim the background */
+}
+
+/* Center the card */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: rgba(30, 30, 30, 0.4); /* Dark transparent base */
+    backdrop-filter: blur(16px); /* The frosted glass blur */
+    -webkit-backdrop-filter: blur(16px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px 30px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Profile Elements */
+.avatar-container {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px auto;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.avatar-decoration {
+    position: absolute;
+    top: -15%; 
+    left: -15%;
+    width: 130%;
+    height: 130%;
+    pointer-events: none;
+}
+
+.username {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.role {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+/* Social Icons */
+.social-links {
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    font-size: 1.8rem;
+    margin: 0 12px;
+    transition: color 0.2s, transform 0.2s;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #b3b3b3;
+    transform: scale(1.1);
+}
+
+/* Audio Player */
+.audio-player {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px;
+    border-radius: 12px;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.song-cover {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.song-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.song-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+}
+
+/* Entrance Overlay */
+#enter-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: opacity 0.5s ease;
+}
