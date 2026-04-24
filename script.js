@@ -10,15 +10,12 @@ let isPlaying = false;
 
 // Handle Entrance Overlay & Autoplay
 overlay.addEventListener('click', () => {
-    // Fade out
     overlay.style.opacity = '0';
     
-    // Remove from DOM after fade finishes
     setTimeout(() => {
         overlay.remove();
     }, 500);
 
-    // Start music
     audio.play();
     isPlaying = true;
     playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
@@ -38,7 +35,6 @@ playBtn.addEventListener('click', () => {
 
 // Update Progress Bar as song plays
 audio.addEventListener('timeupdate', () => {
-    // Prevent errors if duration isn't loaded yet
     if (!audio.duration) return; 
 
     const percent = (audio.currentTime / audio.duration) * 100;
@@ -72,6 +68,7 @@ function handleRouting() {
     const hash = window.location.hash.substring(1) || 'home';
     const sections = document.querySelectorAll('.view-section');
 
+    // Hide all sections, then reveal the one that matches the hash
     sections.forEach(sec => {
         if (sec.id === hash) {
             sec.classList.remove('hidden');
