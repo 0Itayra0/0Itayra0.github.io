@@ -18,6 +18,13 @@
         </video>
     </div>
 
+    <div class="paddle-footer">
+        <a href="#pricing">Pricing</a>
+        <a href="#terms">Terms</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#refund">Refunds</a>
+    </div>
+
     <div class="container">
         
         <div id="home" class="view-section">
@@ -296,6 +303,138 @@
                 <ul>
                     <li>Server ownership (or template links) and final source code files are transferred <strong>only after</strong> the full remaining payment is received.</li>
                 </ul>
+            </div>
+        </div>
+
+        <div id="pricing" class="view-section hidden">
+            <div class="glass-page">
+                <a href="#home" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
+                
+                <h1>✦ ﹕ SERVICES & PRICING 𓂃 ⊹</h1>
+
+                <div class="pricing-tabs">
+                    <button class="pricing-tab-btn active" onclick="switchPricing(event, 'bots-content')">Bots</button>
+                    <button class="pricing-tab-btn" onclick="switchPricing(event, 'servers-content')">Servers</button>
+                    <button class="pricing-tab-btn" onclick="switchPricing(event, 'scripts-content')">Scripts</button>
+                    <button class="pricing-tab-btn" onclick="switchPricing(event, 'web-content')">Websites</button>
+                </div>
+
+                <div id="bots-content" class="pricing-content active-content">
+                    <h2>BOT DEVELOPMENT</h2>
+                    <p>Current Status: [OPEN ✅]<br>Payment Methods: [PayPal / Crypto (USDT preferred via TRC20/BEP20)]</p>
+                    <h3>1. ✦ ﹕ Basic Bots ($10 - $20)</h3>
+                    <p>Perfect for simple server utilities or fun commands.</p>
+                    <ul>
+                        <li><strong>Features:</strong> Simple text commands, automated replies, basic moderation.</li>
+                        <li><strong>Database:</strong> None (Local memory only).</li>
+                        <li><strong>Delivery Time:</strong> 1-3 Days.</li>
+                        <li><strong>Source Code:</strong> Included.</li>
+                    </ul>
+                    <h3>2. ✦ ﹕ Advanced ($25 - $50)</h3>
+                    <p>Bots that need to remember things or interact with other systems.</p>
+                    <ul>
+                        <li><strong>Features:</strong> Economy systems, leveling/XP systems, ticket systems.</li>
+                        <li><strong>Database:</strong> JSON or MongoDB.</li>
+                        <li><strong>Delivery Time:</strong> 3-7 Days.</li>
+                        <li><strong>Source Code:</strong> Included.</li>
+                    </ul>
+                    <h3>3. ✦ ﹕ Complex / API Integrations (Starts at $75+)</h3>
+                    <p>Custom tools that connect Discord to the outside world.</p>
+                    <ul>
+                        <li><strong>Features:</strong> Complex verification, API fetching, or large projects.</li>
+                        <li><strong>Database:</strong> MongoDB.</li>
+                        <li><strong>Delivery Time:</strong> 1-2 Weeks.</li>
+                        <li><strong>Source Code:</strong> Negotiable.</li>
+                    </ul>
+                </div>
+
+                <div id="servers-content" class="pricing-content">
+                    <h2>SERVER BUILDING</h2>
+                    <p>Current Status: [OPEN ✅]</p>
+                    <h3>Basic (Starter) $10 – $20</h3>
+                    <ul>
+                        <li>Basic channel setup (Chats, Voices, Announcements, Rules)</li>
+                        <li>Simple roles (Admin, Mod, Member)</li>
+                        <li>Standard public bots (MEE6, Dyno)</li>
+                        <li>General design work</li>
+                    </ul>
+                    <h3>Intermediate (Standard) $25 – $50</h3>
+                    <ul>
+                        <li>Verification System (Captcha/Roblox link/etc.)</li>
+                        <li>Auto-moderation setup</li>
+                        <li>Custom welcome messages/embeds</li>
+                        <li>Notification system (YouTube/Twitch alerts)</li>
+                        <li>Leveling/XP systems</li>
+                        <li>Basic Graphic Design (server icon, simple banners)</li>
+                    </ul>
+                    <h3>Advanced (Pro / Community) $50 – $80</h3>
+                    <ul>
+                        <li>Complex Permissions (Ticket systems, giveaways)</li>
+                        <li>Onboarding Screen</li>
+                        <li>Professional Graphic Design</li>
+                        <li>Economy systems (Shop, currency)</li>
+                        <li>Webhooks (Auto-posting news)</li>
+                    </ul>
+                    <h3>Enterprise / Custom $100+</h3>
+                    <ul>
+                        <li>Custom-Coded Bots</li>
+                        <li>Full Custom Graphics Kit</li>
+                        <li>Integration with external apps</li>
+                        <li>Top Security and Moderation systems</li>
+                    </ul>
+                </div>
+
+                <div id="scripts-content" class="pricing-content">
+                    <h2>SCRIPTING RATES</h2>
+                    <p>Current Status: [OPEN ✅]<br>Payment Methods: [Robux / PayPal / Crypto]</p>
+                    <h3>1. ✦ ﹕ Simple Assets / UI ($10 - $25)</h3>
+                    <p>Small, standalone scripts that add polish to your game.</p>
+                    <ul>
+                        <li><strong>Examples:</strong> Minor UI, working doors, simple tools, kill bricks.</li>
+                        <li><strong>Complexity:</strong> Minimal logic, no datastores.</li>
+                        <li><strong>Delivery Time:</strong> 1-2 Days.</li>
+                    </ul>
+                    <h3>2. ✦ ﹕ Game Systems ($30 - $60)</h3>
+                    <p>Core mechanics that drive gameplay.</p>
+                    <ul>
+                        <li><strong>Examples:</strong> Round system, shop system, inventory system, tycoon droppers.</li>
+                        <li><strong>Complexity:</strong> Uses DataStores, RemoteEvents.</li>
+                        <li><strong>Delivery Time:</strong> 3-5 Days.</li>
+                    </ul>
+                    <h3>3. ✦ ﹕ Complex / Full Frameworks (Starts at $80+)</h3>
+                    <p>Heavy coding for advanced mechanics.</p>
+                    <ul>
+                        <li><strong>Examples:</strong> Custom combat systems, realistic physics, complex vehicles.</li>
+                        <li><strong>Complexity:</strong> Modular code, heavy math/CFrame usage.</li>
+                        <li><strong>Delivery Time:</strong> 1-2 Weeks.</li>
+                    </ul>
+                </div>
+
+                <div id="web-content" class="pricing-content">
+                    <h2>WEB DEVELOPMENT</h2>
+                    <p>Current Status: [OPEN ✅]<br>Payment Methods: [PayPal / Crypto (USDT preferred via TRC20/BEP20)]</p>
+                    <h3>1. ✦ ﹕ Static & Landing Pages ($20 - $50)</h3>
+                    <p>Clean, responsive, and fast websites.</p>
+                    <ul>
+                        <li><strong>Features:</strong> Custom UI/UX, animations, basic contact forms.</li>
+                        <li><strong>Tech Stack:</strong> HTML, CSS, Vanilla JS.</li>
+                        <li><strong>Delivery Time:</strong> 2-4 Days.</li>
+                    </ul>
+                    <h3>2. ✦ ﹕ Dynamic Web Apps ($60 - $120)</h3>
+                    <p>Interactive websites with state management and API connections.</p>
+                    <ul>
+                        <li><strong>Features:</strong> Multi-page routing, fetching live data, custom search/filtering.</li>
+                        <li><strong>Tech Stack:</strong> React, Vite, Node.js.</li>
+                        <li><strong>Delivery Time:</strong> 1-2 Weeks.</li>
+                    </ul>
+                    <h3>3. ✦ ﹕ Full-Stack / CRM Systems (Starts at $150+)</h3>
+                    <p>Complete back-office tools, catalogs, or admin dashboards.</p>
+                    <ul>
+                        <li><strong>Features:</strong> Secure admin panels, stock tracking, user authentication, databases.</li>
+                        <li><strong>Tech Stack:</strong> React, Node.js, MongoDB.</li>
+                        <li><strong>Delivery Time:</strong> 2-4 Weeks.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 

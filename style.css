@@ -323,3 +323,25 @@ body, html {
     from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Stealth Footer for Paddle */
+.paddle-footer {
+    position: fixed;
+    bottom: 15px;
+    left: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+}
+
+.paddle-footer a {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.2); /* Very faded, almost invisible until hovered */
+    text-decoration: none;
+    transition: color 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.paddle-footer a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
