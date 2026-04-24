@@ -19,47 +19,270 @@
     </div>
 
     <div class="container">
-        <div class="glass-card">
-            
-            <div class="profile-header">
-                <div class="avatar-container">
-                    <img src="my-pfp.gif" alt="Profile Avatar" class="avatar">
-                    <img src="my-decoration.gif" alt="Decoration" class="avatar-decoration">
-                </div>
-                <h1 class="username">Itayra</h1>
-                <p class="role">Full-Stack Developer | Bot Developer | Scripter</p>
-            </div>
-
-            <div class="social-links">
-                <a href="https://discord.com/users/454589765468291072" target="_blank" class="social-icon"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://github.com/0Itayra0" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
-            </div>
-
-            <div class="audio-player">
-                <img src="song-cover.webp" alt="Cover" class="song-cover">
-                <div class="song-info">
-                    <span class="song-title">Lullaby of the New Moon</span>
-                    <div class="progress-container">
-                        <span class="time current-time">0:00</span>
-                        <div class="progress-bar" id="progress-container">
-                            <div class="progress" id="progress"></div>
-                        </div>
-                        <span class="time total-time">2:14</span>
+        
+        <div id="home" class="view-section">
+            <div class="glass-card">
+                <div class="profile-header">
+                    <div class="avatar-container">
+                        <img src="my-pfp.gif" alt="Profile Avatar" class="avatar">
+                        <img src="my-decoration.gif" alt="Decoration" class="avatar-decoration">
                     </div>
+                    <h1 class="username">Itayra</h1>
+                    <p class="role">Full-Stack Developer | Bot Developer | Scripter</p>
                 </div>
-                <div class="controls">
-                    <button id="play-btn"><i class="fa-solid fa-play"></i></button>
+
+                <div class="social-links">
+                    <a href="https://discord.com/users/454589765468291072" target="_blank" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://github.com/0Itayra0" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
                 </div>
-                <audio id="bg-audio" src="lullaby_of_the_new_moon.mp3" loop></audio>
+
+                <div class="audio-player">
+                    <img src="song-cover.webp" alt="Cover" class="song-cover">
+                    <div class="song-info">
+                        <span class="song-title">Lullaby of the New Moon</span>
+                        <div class="progress-container">
+                            <span class="time current-time">0:00</span>
+                            <div class="progress-bar" id="progress-container">
+                                <div class="progress" id="progress"></div>
+                            </div>
+                            <span class="time total-time">2:14</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="play-btn"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <audio id="bg-audio" src="lullaby_of_the_new_moon.mp3" loop></audio>
+                </div> 
             </div> 
-            
-        </div> <div class="legal-card">
-            <a href="pricing.html">Pricing</a>
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="refund.html">Refunds</a>
+
+            <div class="legal-card">
+                <a href="#pricing">Pricing</a>
+                <a href="#terms">Terms</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#refund">Refunds</a>
+            </div>
         </div>
 
-    </div> <script src="script.js"></script>
+        <div id="pricing" class="view-section hidden">
+            <div class="glass-page">
+                <a href="#home" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
+                
+                <h1>✦ ﹕ SERVICES & PRICING 𓂃 ⊹</h1>
+
+                <h2>BOT DEVELOPMENT</h2>
+                <p>Current Status: [OPEN ✅]<br>Payment Methods: [PayPal / Crypto (USDT preferred via TRC20/BEP20)]</p>
+
+                <h3>1. ✦ ﹕ Basic Bots ($10 - $20)</h3>
+                <p>Perfect for simple server utilities or fun commands.</p>
+                <ul>
+                    <li><strong>Features:</strong> Simple text commands, automated replies, basic moderation.</li>
+                    <li><strong>Database:</strong> None (Local memory only).</li>
+                    <li><strong>Delivery Time:</strong> 1-3 Days.</li>
+                    <li><strong>Source Code:</strong> Included.</li>
+                </ul>
+
+                <h3>2. ✦ ﹕ Advanced ($25 - $50)</h3>
+                <p>Bots that need to remember things or interact with other systems.</p>
+                <ul>
+                    <li><strong>Features:</strong> Economy systems, leveling/XP systems, ticket systems.</li>
+                    <li><strong>Database:</strong> JSON or MongoDB.</li>
+                    <li><strong>Delivery Time:</strong> 3-7 Days.</li>
+                    <li><strong>Source Code:</strong> Included.</li>
+                </ul>
+
+                <h3>3. ✦ ﹕ Complex / API Integrations (Starts at $75+)</h3>
+                <p>Custom tools that connect Discord to the outside world.</p>
+                <ul>
+                    <li><strong>Features:</strong> Complex verification, API fetching, or large projects.</li>
+                    <li><strong>Database:</strong> MongoDB.</li>
+                    <li><strong>Delivery Time:</strong> 1-2 Weeks.</li>
+                    <li><strong>Source Code:</strong> Negotiable.</li>
+                </ul>
+
+                <h2>SERVER BUILDING</h2>
+                <p>Current Status: [OPEN ✅]</p>
+
+                <h3>Basic (Starter) $10 – $20</h3>
+                <ul>
+                    <li>Basic channel setup (Chats, Voices, Announcements, Rules)</li>
+                    <li>Simple roles (Admin, Mod, Member)</li>
+                    <li>Standard public bots (MEE6, Dyno)</li>
+                    <li>General design work</li>
+                </ul>
+
+                <h3>Intermediate (Standard) $25 – $50</h3>
+                <ul>
+                    <li>Verification System (Captcha/Roblox link/etc.)</li>
+                    <li>Auto-moderation setup</li>
+                    <li>Custom welcome messages/embeds</li>
+                    <li>Notification system (YouTube/Twitch alerts)</li>
+                    <li>Leveling/XP systems</li>
+                    <li>Basic Graphic Design (server icon, simple banners)</li>
+                </ul>
+
+                <h3>Advanced (Pro / Community) $50 – $80</h3>
+                <ul>
+                    <li>Complex Permissions (Ticket systems, giveaways)</li>
+                    <li>Onboarding Screen</li>
+                    <li>Professional Graphic Design</li>
+                    <li>Economy systems (Shop, currency)</li>
+                    <li>Webhooks (Auto-posting news)</li>
+                </ul>
+
+                <h3>Enterprise / Custom $100+</h3>
+                <ul>
+                    <li>Custom-Coded Bots</li>
+                    <li>Full Custom Graphics Kit</li>
+                    <li>Integration with external apps</li>
+                    <li>Top Security and Moderation systems</li>
+                </ul>
+
+                <h2>SCRIPTING RATES</h2>
+                <p>Current Status: [OPEN ✅]<br>Payment Methods: [Robux / PayPal / Crypto]</p>
+
+                <h3>1. ✦ ﹕ Simple Assets / UI ($10 - $25)</h3>
+                <p>Small, standalone scripts that add polish to your game.</p>
+                <ul>
+                    <li><strong>Examples:</strong> Minor UI, working doors, simple tools, kill bricks.</li>
+                    <li><strong>Complexity:</strong> Minimal logic, no datastores.</li>
+                    <li><strong>Delivery Time:</strong> 1-2 Days.</li>
+                </ul>
+
+                <h3>2. ✦ ﹕ Game Systems ($30 - $60)</h3>
+                <p>Core mechanics that drive gameplay.</p>
+                <ul>
+                    <li><strong>Examples:</strong> Round system, shop system, inventory system, tycoon droppers.</li>
+                    <li><strong>Complexity:</strong> Uses DataStores, RemoteEvents.</li>
+                    <li><strong>Delivery Time:</strong> 3-5 Days.</li>
+                </ul>
+
+                <h3>3. ✦ ﹕ Complex / Full Frameworks (Starts at $80+)</h3>
+                <p>Heavy coding for advanced mechanics.</p>
+                <ul>
+                    <li><strong>Examples:</strong> Custom combat systems, realistic physics, complex vehicles.</li>
+                    <li><strong>Complexity:</strong> Modular code, heavy math/CFrame usage.</li>
+                    <li><strong>Delivery Time:</strong> 1-2 Weeks.</li>
+                </ul>
+
+                <h2>WEB DEVELOPMENT</h2>
+                <p>Current Status: [OPEN ✅]<br>Payment Methods: [PayPal / Crypto (USDT preferred via TRC20/BEP20)]</p>
+
+                <h3>1. ✦ ﹕ Static & Landing Pages ($20 - $50)</h3>
+                <p>Clean, responsive, and fast websites.</p>
+                <ul>
+                    <li><strong>Features:</strong> Custom UI/UX, animations, basic contact forms.</li>
+                    <li><strong>Tech Stack:</strong> HTML, CSS, Vanilla JS.</li>
+                    <li><strong>Delivery Time:</strong> 2-4 Days.</li>
+                </ul>
+
+                <h3>2. ✦ ﹕ Dynamic Web Apps ($60 - $120)</h3>
+                <p>Interactive websites with state management and API connections.</p>
+                <ul>
+                    <li><strong>Features:</strong> Multi-page routing, fetching live data, custom search/filtering.</li>
+                    <li><strong>Tech Stack:</strong> React, Vite, Node.js.</li>
+                    <li><strong>Delivery Time:</strong> 1-2 Weeks.</li>
+                </ul>
+
+                <h3>3. ✦ ﹕ Full-Stack / CRM Systems (Starts at $150+)</h3>
+                <p>Complete back-office tools, catalogs, or admin dashboards.</p>
+                <ul>
+                    <li><strong>Features:</strong> Secure admin panels, stock tracking, user authentication, databases.</li>
+                    <li><strong>Tech Stack:</strong> React, Node.js, MongoDB.</li>
+                    <li><strong>Delivery Time:</strong> 2-4 Weeks.</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div id="terms" class="view-section hidden">
+            <div class="glass-page">
+                <a href="#home" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
+                
+                <h1>✦ ﹕ TERMS OF SERVICE 𓂃 ⊹</h1>
+                <p>Please read the following terms carefully before using or purchasing my services. Last Updated: [05.01.2026]</p>
+        
+                <h2>1. ✦ ﹕ Usage Agreement</h2>
+                <p>By using my bots, purchasing custom instances, or commissioning setups, you agree to:</p>
+                <ul>
+                    <li>Not attempt to exploit, crash, or abuse any APIs or systems provided.</li>
+                    <li>Not use the services for illegal activities, raiding, hate speech, or to violate Discord's/Roblox's ToS.</li>
+                    <li>Provide clear instructions and necessary assets before development/building begins.</li>
+                    <li>Report any major bugs directly to me rather than abusing them.</li>
+                </ul>
+        
+                <h2>2. ✦ ﹕ Intellectual Property</h2>
+                <p>Regarding usage rights and ownership:</p>
+                <ul>
+                    <li><strong>Bots & Scripts:</strong> You receive a license to use the bot/script in your specific project. You do not own the source code unless specifically agreed upon and paid for.</li>
+                    <li><strong>Servers:</strong> You receive the rights to use the server for your community, but you may not save it as a template to resell.</li>
+                    <li><strong>Reselling:</strong> You may not resell or redistribute any bots, scripts, or templates to others.</li>
+                    <li><strong>Showcase:</strong> I reserve the right to post screenshots or code snippets of the design/project in my portfolio (sensitive info blurred).</li>
+                </ul>
+        
+                <h2>3. ✦ ﹕ Maintenance & Revisions</h2>
+                <ul>
+                    <li><strong>Bots & Scripts:</strong> If a bug is found that is my fault, I will fix it for free. I am not responsible for breakages due to external platform updates or your own edits to the source code.</li>
+                    <li><strong>Servers:</strong> You are entitled to 2 rounds of minor revisions for free. Major structural changes mid-build require an extra fee.</li>
+                </ul>
+        
+                <h2>4. ✦ ﹕ Termination</h2>
+                <p>I reserve the right to revoke your access, cancel a commission, or blacklist you from my services if you are found violating these terms, scamming, attempting a chargeback, or harassing staff/members.</p>
+
+            </div>
+        </div>
+
+        <div id="privacy" class="view-section hidden">
+            <div class="glass-page">
+                <a href="#home" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
+                
+                <h1>✦ ﹕ PRIVACY POLICY 𓂃 ⊹</h1>
+
+                <h2>1. ✦ ﹕ Data Collection</h2>
+                <p>To function correctly and provide customized services, my applications (such as custom Discord bots) may store the following information:</p>
+                <ul>
+                    <li><strong>User Information:</strong> User IDs and usernames to track balances, warnings, or specific permissions within a server.</li>
+                    <li><strong>Server Information:</strong> Server IDs to manage unique settings per server instance.</li>
+                    <li><strong>Log Data:</strong> Other minor, non-personal information required for standard functionality and error tracking.</li>
+                </ul>
+        
+                <h2>2. ✦ ﹕ Data Usage</h2>
+                <p>The collected data is used strictly for the operation, maintenance, and improvement of the provided services. I do not, under any circumstances, sell your data to third parties.</p>
+        
+                <h2>3. ✦ ﹕ Data Deletion & Wiping</h2>
+                <p>If you wish to have your data, or your server's data, entirely wiped from my databases, please contact me directly. <strong>Please note that this action is permanent and non-restorable.</strong></p>
+
+            </div>
+        </div>
+
+        <div id="refund" class="view-section hidden">
+            <div class="glass-page">
+                <a href="#home" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
+                
+                <h1>✦ ﹕ REFUND POLICY 𓂃 ⊹</h1>
+
+                <h2>1. ✦ ﹕ General Payment Terms</h2>
+                <ul>
+                    <li>All completed payments are final once the service, server, script, or source code is delivered, unless a critical error on my end cannot be fixed.</li>
+                    <li>For all custom commissions (Bots, Servers, Scripts, Websites), a <strong>50% deposit</strong> is required before any work begins.</li>
+                    <li>Revoking a payment (chargeback) will result in an immediate and permanent blacklist from all my services.</li>
+                </ul>
+        
+                <h2>2. ✦ ﹕ Cancellations</h2>
+                <ul>
+                    <li>If you choose to cancel the order after work has started and significant progress has been made, the 50% deposit is <strong>not refunded</strong>.</li>
+                    <li>If I am unable to complete the commission for any reason on my end, you will receive a full refund, including the initial deposit.</li>
+                </ul>
+        
+                <h2>3. ✦ ﹕ Delivery & Ownership</h2>
+                <ul>
+                    <li>Server ownership (or template links) and final source code files are transferred <strong>only after</strong> the full remaining payment is received.</li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div> 
+
+    <script src="script.js"></script>
 </body>
 </html>

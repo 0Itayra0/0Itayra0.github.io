@@ -65,3 +65,24 @@ progressContainer.addEventListener('click', (e) => {
     const duration = audio.duration;
     audio.currentTime = (clickX / width) * duration;
 });
+
+// --- SPA Hash Routing Logic ---
+function handleRouting() {
+    // Get the hash from the URL (e.g., "pricing" from "#pricing"), default to "home"
+    const hash = window.location.hash.substring(1) || 'home';
+    const sections = document.querySelectorAll('.view-section');
+
+    sections.forEach(sec => {
+        if (sec.id === hash) {
+            sec.classList.remove('hidden');
+        } else {
+            sec.classList.add('hidden');
+        }
+    });
+}
+
+// Listen for tab switches
+window.addEventListener('hashchange', handleRouting);
+
+// Run once when the page first loads
+handleRouting();
