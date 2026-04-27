@@ -14,10 +14,25 @@
 
     <div class="video-container">
         <video autoplay loop muted playsinline id="bg-video">
-            <source src="background-loop.mp4" type="video/mp4">
+            <source src="themes/default/background-loop.mp4" type="video/mp4">
         </video>
     </div>
 
+    <div class="theme-drawer">
+        <div class="theme-file" onclick="changeTheme('placeholder')">
+            <div class="theme-bg" style="background-image: url('themes/placeholder/cyber-cover.jpg');"></div>
+            <span>Placeholder</span>
+        </div>
+        <div class="theme-file" onclick="changeTheme('chill')">
+            <div class="theme-bg" style="background-image: url('themes/chill/chill-cover.webp');"></div>
+            <span>Chill Vibes</span>
+        </div>
+        <div class="theme-file" onclick="changeTheme('default')">
+            <div class="theme-bg" style="background-image: url('themes/default/song-cover.webp');"></div>
+            <span>Default</span>
+        </div>
+    </div>
+    
     <div class="container">
         
         <div id="home" class="view-section">
@@ -38,7 +53,7 @@
                 </div>
 
                 <div class="audio-player">
-                    <img src="song-cover.webp" alt="Cover" class="song-cover">
+                    <img src="themes/default/song-cover.webp" alt="Cover" class="song-cover">
                     <div class="song-info">
                         <span class="song-title">Lullaby of the New Moon</span>
                         <div class="progress-container">
@@ -52,7 +67,7 @@
                     <div class="controls">
                         <button id="play-btn"><i class="fa-solid fa-play"></i></button>
                     </div>
-                    <audio id="bg-audio" src="lullaby_of_the_new_moon.mp3" loop></audio>
+                    <audio id="bg-audio" src="themes/default/lullaby_of_the_new_moon.mp3" loop></audio>
                 </div> 
             </div> 
 

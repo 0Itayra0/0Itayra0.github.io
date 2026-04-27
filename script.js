@@ -83,3 +83,52 @@ window.addEventListener('hashchange', handleRouting);
 
 // Run once when the page first loads
 handleRouting();
+
+// --- Theme Drawer Logic ---
+
+// Updated to link to the new /themes subfolders
+const themes = {
+    default: {
+        video: 'themes/default/background-loop.mp4',
+        audio: 'themes/default/lullaby_of_the_new_moon.mp3',
+        cover: 'themes/default/song-cover.webp',
+        title: 'Lullaby of the New Moon'
+    },
+    chill: {
+        video: 'themes/chill/chill-bg.mp4',      
+        audio: 'themes/chill/chill-song.mp3',    
+        cover: 'themes/chill/chill-cover.webp',   
+        title: 'Low Cortisol'
+    },
+    cyberpunk: {
+        video: 'themes/placeholder/cyber-bg.mp4',      
+        audio: 'themes/placeholder/cyber-song.mp3',    
+        cover: 'themes/placeholder/cyber-cover.jpg',   
+        title: 'Neon Nights'
+    }
+};
+
+function changeTheme(themeName) {
+    const theme = themes[themeName];
+    if (!theme) return;
+
+    // 1. Swap Background Video
+    const videoElement = document.getElementById('bg-video');
+    videoElement.src = theme.video;
+    videoElement.play(); 
+
+    // 2. Swap Audio
+    const wasPlaying = isPlaying; 
+    audio.src = theme.audio;
+    if (wasPlaying) {
+        audio.play(); 
+    }
+
+    // 3. Swap UI Details
+    document.querySelector('.song-cover').src = theme.cover;
+    document.querySelector('.song-title').innerText = theme.title;
+    
+    // 4. Reset Progress Bar
+    progress.style.width = '0%';
+    currentTimeEl.innerText = '0:00';
+}
