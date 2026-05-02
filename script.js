@@ -8,7 +8,6 @@ const overlay = document.getElementById('enter-overlay');
 
 let isPlaying = false;
 
-// Handle Entrance Overlay & Autoplay
 overlay.addEventListener('click', () => {
     overlay.style.opacity = '0';
     
@@ -21,7 +20,7 @@ overlay.addEventListener('click', () => {
     playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
 });
 
-// Play / Pause Toggle
+// Playing / Pause Toggle
 playBtn.addEventListener('click', () => {
     if (isPlaying) {
         audio.pause();
@@ -33,7 +32,7 @@ playBtn.addEventListener('click', () => {
     isPlaying = !isPlaying;
 });
 
-// Update Progress Bar as song plays
+// Song progress bar
 audio.addEventListener('timeupdate', () => {
     if (!audio.duration) return; 
 
@@ -46,7 +45,6 @@ audio.addEventListener('timeupdate', () => {
     currentTimeEl.innerText = `${currentMin}:${currentSec}`;
 });
 
-// Load total time
 audio.addEventListener('loadedmetadata', () => {
     let durationMin = Math.floor(audio.duration / 60);
     let durationSec = Math.floor(audio.duration % 60);
@@ -54,7 +52,6 @@ audio.addEventListener('loadedmetadata', () => {
     totalTimeEl.innerText = `${durationMin}:${durationSec}`;
 });
 
-// Click on progress bar to seek
 progressContainer.addEventListener('click', (e) => {
     const width = progressContainer.clientWidth;
     const clickX = e.offsetX;
@@ -62,13 +59,11 @@ progressContainer.addEventListener('click', (e) => {
     audio.currentTime = (clickX / width) * duration;
 });
 
-// --- SPA Hash Routing Logic ---
+// spa
 function handleRouting() {
-    // Get the hash from the URL (e.g., "pricing" from "#pricing"), default to "home"
     const hash = window.location.hash.substring(1) || 'home';
     const sections = document.querySelectorAll('.view-section');
 
-    // Hide all sections, then reveal the one that matches the hash
     sections.forEach(sec => {
         if (sec.id === hash) {
             sec.classList.remove('hidden');
@@ -78,15 +73,13 @@ function handleRouting() {
     });
 }
 
-// Listen for tab switches
-window.addEventListener('hashchange', handleRouting);
 
-// Run once when the page first loads
+window.addEventListener('hashchange', handleRouting);
 handleRouting();
 
-// --- Theme Drawer Logic ---
+// themes drawing
 
-// Updated to link to the new /themes subfolders
+// added /themes folder, should be more organized now
 const themes = {
     default: {
         video: 'themes/default/background-loop.mp4',
@@ -108,27 +101,24 @@ const themes = {
     }
 };
 
+// Swapping stuff
 function changeTheme(themeName) {
     const theme = themes[themeName];
     if (!theme) return;
 
-    // 1. Swap Background Video
     const videoElement = document.getElementById('bg-video');
     videoElement.src = theme.video;
     videoElement.play(); 
 
-    // 2. Swap Audio
     const wasPlaying = isPlaying; 
     audio.src = theme.audio;
     if (wasPlaying) {
         audio.play(); 
     }
 
-    // 3. Swap UI Details
     document.querySelector('.song-cover').src = theme.cover;
     document.querySelector('.song-title').innerText = theme.title;
     
-    // 4. Reset Progress Bar
     progress.style.width = '0%';
     currentTimeEl.innerText = '0:00';
 }
