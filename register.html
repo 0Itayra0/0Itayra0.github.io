@@ -17,22 +17,20 @@
       padding: 40px 20px;
     }
 
-    /* --- NEW TIMER STYLES --- */
     .timer-box {
       width: 100%;
       max-width: 500px;
       background-color: #1a1a24;
       padding: 20px;
       border-radius: 12px;
-      border: 1px solid #f5d849;
-      box-shadow: 0 0 25px rgba(245, 216, 73, 0.15);
+      border: 1px solid #333;
       box-sizing: border-box;
       text-align: center;
       margin-bottom: 30px;
       transition: all 0.3s ease;
     }
     .timer-title {
-      color: #f5d849;
+      color: #aaa;
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -47,7 +45,6 @@
       letter-spacing: 2px;
       text-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
-    /* ------------------------ */
 
     .register-box {
       width: 100%;
@@ -140,7 +137,6 @@
       display: none;
       transition: all 0.3s ease;
     }
-    /* Participants Board Styles */
     .participants-section {
       width: 100%;
       max-width: 800px; 
@@ -213,7 +209,7 @@
     <div id="timer-countdown" class="timer-countdown">00:00:00:00</div>
   </div>
 
-  <div class="register-box" id="register-container" style="display: none;">
+  <div class="register-box" id="register-container">
     <h2>The Brawl League</h2>
 
     <div id="error-msg" class="alert error"></div>
@@ -264,10 +260,8 @@
   </div>
 
   <script>
-    // --- NEW HYPE ENGINE TIMER LOGIC ---
-    // The browser will automatically convert these strings into your exact local timezone
-    const unlockDate = new Date('June 1, 2026 18:00:00').getTime(); 
-    const tournamentDate = new Date('June 6, 2026 18:00:00').getTime();
+    // ONLY COUNTING DOWN TO TOURNAMENT START NOW
+    const tournamentDate = new Date('June 7, 2026 18:00:00 UTC').getTime() - (2 * 60 * 60 * 1000); // Fixed to global UTC time
 
     function updateHypeTimer() {
       const now = new Date().getTime();
@@ -276,54 +270,33 @@
       const timerCountdown = document.getElementById('timer-countdown');
       const timerBox = document.getElementById('timer-box');
 
-      let targetDate, titleText;
-
-      // Phase 1: Waiting for Registration to open
-      if (now < unlockDate) {
-        targetDate = unlockDate;
-        titleText = "Registration Opens In:";
-        formContainer.style.display = 'none'; // Hide the form
-      } 
-      // Phase 2: Registration is Open, waiting for Tournament
-      else if (now < tournamentDate) {
-        targetDate = tournamentDate;
-        titleText = "Tournament Starts In:";
-        formContainer.style.display = 'block'; // Show the form!
-        timerBox.style.borderColor = '#333';
-        timerBox.style.boxShadow = 'none';
-        timerTitle.style.color = '#aaa';
-      } 
-      // Phase 3: Tournament is Live!
-      else {
-        timerTitle.innerText = "🚨 THE BRAWL LEAGUE REGISTRATION IS LOCKED 🚨";
+      if (now < tournamentDate) {
+        timerTitle.innerText = "Tournament Starts In:";
+      } else {
+        timerTitle.innerText = "🚨 THE BRAWL LEAGUE IS LIVE 🚨";
         timerTitle.style.color = '#ff3b30';
-        timerCountdown.innerText = "We're forming the brackets!";
+        timerCountdown.innerText = "BRAWL!";
         timerBox.style.borderColor = '#ff3b30';
         timerBox.style.boxShadow = '0 0 25px rgba(255, 59, 48, 0.2)';
-        formContainer.style.display = 'none'; // Lock registrations when it starts
+        formContainer.style.display = 'none'; // Lock registrations when tournament actually starts
         return;
       }
 
-      // Calculate time components
-      const distance = targetDate - now;
+      const distance = tournamentDate - now;
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Pad with zeros (e.g. 05 instead of 5)
       const formattedHours = hours.toString().padStart(2, '0');
       const formattedMins = minutes.toString().padStart(2, '0');
       const formattedSecs = seconds.toString().padStart(2, '0');
 
-      timerTitle.innerText = titleText;
       timerCountdown.innerText = `${days}d ${formattedHours}h ${formattedMins}m ${formattedSecs}s`;
     }
 
-    // Start the timer engine
     setInterval(updateHypeTimer, 1000);
-    updateHypeTimer(); // Run it immediately once so it doesn't flicker
-    // -----------------------------------
+    updateHypeTimer(); 
 
     function generateBrawlersHTML(topBrawlers) {
       let html = '';
