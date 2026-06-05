@@ -355,7 +355,7 @@
       const waitlistGrid = document.getElementById('waitlist-grid');
       
       try {
-        const response = await fetch('https://brawl.vymir.org/api/players');
+        const response = await fetch('https://ditto-obnoxious-subsoil.ngrok-free.dev/api/players');
         const data = await response.json();
         
         if (data.success) {
@@ -408,7 +408,7 @@
       btn.textContent = 'Verifying Tag...';
 
       try {
-        const response = await fetch('https://brawl.vymir.org/api/register', {
+        const response = await fetch('https://ditto-obnoxious-subsoil.ngrok-free.dev/api/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ displayName, playerTag, agreedToPenalty })
